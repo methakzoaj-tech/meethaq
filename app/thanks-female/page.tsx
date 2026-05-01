@@ -32,7 +32,7 @@ export default function ThanksFemale() {
         <br />
         {/* رجوع */}
         <button
-          onClick={() => window.location.href = "/survey/male"}
+          onClick={() => window.location.href = "/"}
           className="w-full border border-gray-400 py-3 rounded-xl text-gray-600"
         >
           ← العودة للاستبيان
