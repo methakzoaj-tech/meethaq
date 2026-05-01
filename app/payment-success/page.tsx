@@ -1,41 +1,12 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+import { Suspense } from "react";
+import PaymentContent from "./PaymentContent";
 
-export default function PaymentSuccess() {
-  const params = useSearchParams();
-
-  useEffect(() => {
-    const uid = params.get("uid");
-
-    if (!uid) return;
-
-    const markPaid = async () => {
-      try {
-        const res = await fetch("/api/mark-paid", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ user_id: uid }),
-        });
-
-        const data = await res.json();
-        console.log("Payment saved:", data);
-      } catch (err) {
-        console.error("Error saving payment:", err);
-      }
-    };
-
-    markPaid();
-  }, [params]);
-
+export default function Page() {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-[#f7f3ed]">
-      <h1 className="text-2xl font-bold text-[#2f2f2f]">
-        تم الدفع بنجاح 🎉
-      </h1>
-    </main>
+    <Suspense fallback={<div>Loading...</div>}>
+      <PaymentContent />
+    </Suspense>
   );
 }
