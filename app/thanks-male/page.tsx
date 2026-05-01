@@ -70,7 +70,7 @@ export default function ThanksMale() {
             <input
                 type="hidden"
                 name="returnurl"
-                value={`http://localhost:3000/payment-success?uid=${userId}`}
+                value={`http://meethaq-mu.vercel.app/payment-success?uid=${userId}`}
                 />
             
             <button className="w-full bg-[#c89b3c] text-white py-3 rounded-xl">
@@ -95,7 +95,7 @@ export default function ThanksMale() {
             <input
                 type="hidden"
                 name="returnurl"
-                value={`http://localhost:3000/payment-success?uid=${userId}`}
+                value={`http://meethaq-mu.vercel.app/payment-success?uid=${userId}`}
                 />
 
             <button
